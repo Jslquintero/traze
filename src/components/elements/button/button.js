@@ -16,7 +16,7 @@ import "./_style.scss";
 export default function Button(props) {
   return (
     <>
-      <button className={props.styleType}>{props.text}</button>
+      <button type="submit" className={props.styleType}>{props.text}</button>
     </>
   );
 }

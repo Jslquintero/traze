@@ -16,16 +16,18 @@ import "./../../../assets/styles/styles.scss";
 export default function Card(props) {
   return (
     <>
-      <div className="card grid">
+      <div className={`card grid ${props.card_align}`}>
         {props.img && (
           <div className="card-img">
             <img src={props.img} alt="imagen" />
           </div>
         )}
-        <div className={`card-body grid ${props.align}`}>
+        <div className={`card-body grid ${props.content_align}`}>
           <h3 className="card-title"> {props.title}</h3>
-          <p className="card-subtitle">{props.subtitle}</p>
-          <Button styleType="btn-card grid visible" text={props.buttonText} />
+          {props.subtitle && <p className="card-subtitle">{props.subtitle}</p>}
+          {props.button && (
+            <Button styleType="btn-card grid visible" text={props.buttonText} />
+          )}
         </div>
       </div>
     </>

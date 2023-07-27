@@ -22,13 +22,11 @@ export default function Navbar(props) {
     <>
       <div className="site-navigation-wrapper">
         <Bar>
-          <div className="site-header-main-logo-hb">
-            <img
-              alt="logo"
-              src="https://picsum.photos/136/40"
-              className="logo-bar"
-            />
-          </div>
+          <img
+            alt="logo"
+            src="https://picsum.photos/250/55"
+            className="logo-bar"
+          />
           <div
             className="hb-bar"
             onClick={() =>
@@ -49,7 +47,6 @@ export default function Navbar(props) {
 
           <div className={header}>
             <Item
-              logo="https://picsum.photos/136/40"
               items={[
                 {
                   route: "/",

@@ -1,31 +1,5 @@
 @import "../../../assets/styles/variables";
 
-.site-header-main {
-    .site-header-main-wrapper {
-        grid-template-columns: 20% 80%;
-        @media (max-width: 680px) {
-            grid-template-columns: 100%;
-        }
-        .site-header-main-logo {
-            margin: 0.5rem;
-            @media (max-width: 580px) {
-                display: none;
-            }
-        }
-        .site-header-main-item {
-            justify-self: end;
-            font-size: 1.3rem;
-            .links-text {
-                color: $secondaryFontColor;
-                text-decoration: none;
-                margin: 2.5rem;
-                @media (max-width: 680px) {
-                    margin: 0.5rem;
-                }
-            }
-        }
-    }
-}
 .site-header-main-logo-hb {
     display: none;
     margin: 0.5rem;
@@ -36,27 +10,25 @@
     }
 }
 
+//barra donde estan los items
 .site-navigation-wrapper {
     .navbar {
-        height: 10vh;
-        .nav-container {
-            grid-template-columns: 22% 80%;
-            .items {
-                grid-template-columns: 1fr;
-                .hb-bar {
-                    display: none;
-                }
-                .links {
-                    font-size: 1.3rem;
-                    .nav-item {
-                        text-align: center;
-                        list-style: none;
-                        margin-top: 1rem;
-                        .links-text {
-                            color: $primaryFontColor;
-                            text-decoration: none;
-                            margin: 2.5rem;
-                        }
+        height: 6vh;
+        .items {
+            grid-template-columns: 20% 80%;
+            .hb-bar {
+                display: none;
+            }
+            .links {
+                font-size: 1.3rem;
+                margin-top: 1.2rem;
+                .nav-item {
+                    text-align: center;
+                    list-style: none;
+                    .links-text {
+                        color: $primaryFontColor;
+                        text-decoration: none;
+                        margin: 2.5rem;
                     }
                 }
             }
@@ -85,7 +57,7 @@
     }
     .site-navigation-wrapper .navbar .items {
         width: 100%;
-        grid-template-columns: 80% 20% !important;
+        grid-template-columns: 68% 24% !important;
         .hb-bar {
             margin-right: 5%;
             display: block;
@@ -108,6 +80,7 @@
                 text-decoration: none;
                 margin: auto;
                 padding: 0.5rem;
+                list-style: none;
             }
         }
     }
