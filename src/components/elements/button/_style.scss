@@ -1,0 +1,22 @@
+@import "../../../assets/styles/variables";
+
+.button {
+    display: inline-block;
+    padding: 20px 20px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    border: 2px solid transparent;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    color: white;
+
+    &.pill {
+        border-radius: 50px;
+    }
+
+    &.rounded {
+        border-radius: 10px;
+    }
+}

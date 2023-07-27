@@ -1,46 +1,62 @@
 @import "../../../assets/styles/variables";
 
-.navbar {
-    background-color: $primaryColor;
-    width: 100%;
-    height: 6vh;
-    display: grid;
-
-    .items {
-        grid-template-columns: 21% 59% 14%;
-        grid-template-areas: "a b c";
-        grid-gap: 1rem;
-        display: grid;
-
-        .navbar-logo {
-            grid-area: a;
-            list-style: none;
+.site-header-main {
+    .site-header-main-wrapper {
+        grid-template-columns: 20% 80%;
+        @media (max-width: 680px) {
+            grid-template-columns: 100%;
         }
-
-        .hb-bar {
-            display: none;
-            grid-area: c;
+        .site-header-main-logo {
+            margin: 0.5rem;
+            @media (max-width: 580px) {
+                display: none;
+            }
+        }
+        .site-header-main-item {
             justify-self: end;
-        }
-
-        .links {
-            grid-area: b;
             font-size: 1.3rem;
-            list-style: none;
-            .nav-item {
-                display: grid;
-                grid-template-columns: repeat(4, 1fr);
-                grid-gap: 1rem;
-                .links-text {
-                    color: $secondaryFontColor;
-                    text-decoration: none;
-                    list-style: none;
-                    grid-gap: 0.5rem;
-                    font-weight: 600;
+            .links-text {
+                color: $secondaryFontColor;
+                text-decoration: none;
+                margin: 2.5rem;
+                @media (max-width: 680px) {
+                    margin: 0.5rem;
+                }
+            }
+        }
+    }
+}
+.site-header-main-logo-hb {
+    display: none;
+    margin: 0.5rem;
+    @media (max-width: 580px) {
+        margin: auto;
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
+
+.site-navigation-wrapper {
+    .navbar {
+        height: 10vh;
+        .nav-container {
+            grid-template-columns: 22% 80%;
+            .items {
+                grid-template-columns: 1fr;
+                .hb-bar {
+                    display: none;
+                }
+                .links {
                     font-size: 1.3rem;
-                    &:hover {
-                        color: $primaryFontColor;
-                      
+                    .nav-item {
+                        text-align: center;
+                        list-style: none;
+                        margin-top: 1rem;
+                        .links-text {
+                            color: $primaryFontColor;
+                            text-decoration: none;
+                            margin: 2.5rem;
+                        }
                     }
                 }
             }
@@ -48,24 +64,50 @@
     }
 }
 
-@media screen and (max-width: 580px) {
-    .navbar {
-        .items {
-            .links {
-                display: grid;
-                grid-area: c;
-                grid-template-columns: repeat((2, 1fr));
-            }
-            .hb-bar {
-                display: grid;
-                grid-area: c;
-                justify-self: end;
-
-                .nav-item {
-                    width: 100%;
-                    height: 0.2rem;
-                    background-color: $secondaryFontColor;
-                }
+@media (max-width: 600px) {
+    .grid {
+        width: 100%;
+        flex-direction: column;
+    }
+    .grid-cols-2 {
+        grid-template-columns: 1fr;
+    }
+    .site-header-main-item {
+        justify-self: center !important;
+        .nav-item {
+            text-align: center;
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+    }
+    .site-navigation-wrapper .navbar {
+        height: auto !important;
+    }
+    .site-navigation-wrapper .navbar .items {
+        width: 100%;
+        grid-template-columns: 80% 20% !important;
+        .hb-bar {
+            margin-right: 5%;
+            display: block;
+        }
+    }
+    .site-navigation-wrapper .navbar .items .links {
+        display: none;
+    }
+    .site-navigation-wrapper .navbar .items .links-show {
+        justify-self: center;
+        display: block;
+        font-size: 1.3rem;
+        margin-left: 21%;
+        .nav-item {
+            display: grid;
+            grid-template-columns: 1fr;
+            text-align: center;
+            .links-text {
+                color: $primaryFontColor;
+                text-decoration: none;
+                margin: auto;
+                padding: 0.5rem;
             }
         }
     }
