@@ -16,7 +16,10 @@ import "./../../../assets/styles/styles.scss";
 export default function Card(props) {
   return (
     <>
-      <div className={`card grid ${props.card_align}`}>
+      <div
+        className={`card grid ${props.card_style}`}
+        style={{ backgroundColor: props.bg_color }}
+      >
         {props.img && (
           <div className="card-img">
             <img src={props.img} alt="imagen" />

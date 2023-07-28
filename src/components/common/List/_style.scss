@@ -1,0 +1,34 @@
+@import "../../../assets/styles/variables";
+
+$circle-color: #2e5fd6;
+$circle-size: 2.5rem;
+
+.circle-list {
+    display: block;
+    counter-reset: numList;
+
+    li {
+        width: auto;
+        position: relative;
+        list-style: none;
+        margin-left: 0rem;
+        margin-right: 0rem;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+
+        &:before {
+            counter-increment: numList;
+            content: counter(numList);
+            margin-right: 1rem;
+            float: left;
+            font: bold 12px sans-serif;
+            text-align: center;
+            color: #fff;
+            line-height: $circle-size;
+            width: $circle-size;
+            height: $circle-size;
+            background: $circle-color;
+            border-radius: 50%;
+        }
+    }
+}
