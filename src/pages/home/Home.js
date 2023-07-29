@@ -16,6 +16,8 @@ import Card from "../../components/elements/card/card";
 import List from "../../components/common/List/list";
 import "./../../assets/styles/styles.scss";
 import "./_style.scss";
+import Accordion from "../../components/common/accordion/accordion";
+import Footer from "../../components/common/footer/footer";
 
 export default function Home() {
   const card_testimonials = () => {
@@ -81,9 +83,34 @@ export default function Home() {
         title={item.title}
         subtitle={item.subtitle}
         content_align={"content-center"}
-        card_style={"content-center rounded"}
+        card_style={"content-center ml-2 rounded"}
         bg_color={"transparent"}
       />
+    ));
+    return data;
+  };
+
+  const faq_list = () => {
+    const list = [
+      {
+        titulo: "¿Qué necesito para comenzar a vender?",
+        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+      },
+      {
+        titulo: "¿Qué necesito para comenzar a vender?",
+        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+      },
+      {
+        titulo: "¿Qué necesito para comenzar a vender?",
+        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+      },
+      {
+        titulo: "¿Qué necesito para comenzar a vender?",
+        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+      },
+    ];
+    const data = list.map((item, index) => (
+      <Accordion key={index} titulo={item.titulo} text={item.text} />
     ));
     return data;
   };
@@ -213,7 +240,7 @@ export default function Home() {
             <b>Preguntas Frecuentes</b>
           </h3>
           <div className="grid grid-cols-2 faq-container sm-content-center lg-content-center grid-gap-2">
-          <div className="lg-content-right sm-content-center">
+            <div className="lg-content-right sm-content-center">
               <Button
                 styleType="button pill secondary"
                 text={"Para el vendedor"}
@@ -229,9 +256,11 @@ export default function Home() {
             </div>
           </div>
 
-          <div></div>
+          <div className="grid mt-3 content-center">{faq_list()}</div>
         </div>
       </div>
+
+      <Footer />
     </>
   );
 }

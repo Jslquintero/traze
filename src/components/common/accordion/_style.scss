@@ -1,0 +1,45 @@
+.accordion {
+    width: auto;
+    color: black;
+    background-color: white;
+    padding: 1rem 1rem;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+
+    .accordion-container {
+        position: relative;
+        margin: 1rem 1rem;
+        .label {
+            position: relative;
+            padding: 1rem 0;
+            font-size: clamp(1rem, 2vw, 5rem);
+            color: black;
+            cursor: pointer;
+
+            &::before {
+                content: "+";
+                color: black;
+                position: absolute;
+                top: 50%;
+                right: -5rem;
+                font-size: clamp(1.2rem, 2vw, 5rem);
+                transform: translateY(-50%);
+                @media screen and (max-width: 768px) {
+                    right: -2rem;
+                }
+            }
+        }
+    }
+    .accordion-content {
+        position: relative;
+        height: 0;
+        font-size: clamp(1rem, 2vw, 5rem);
+        overflow: hidden;
+        transition: 0.5s;
+    }
+}
+@media screen and (max-width: 768px) {
+    .accordion-container {
+        grid-template-rows: auto; /* Change to "auto" for a single row on smaller screens */
+    }
+}
